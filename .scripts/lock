@@ -1,0 +1,4 @@
+#!/bin/sh
+
+i3lock -B $(expr $(xdpyinfo | grep resolution | sed -r 's/[^0-9]*([0-9]+).*/\1/') / 12) --insidevercolor '#00000088' --insidewrongcolor '#00000088' --insidecolor '#00000088' --ringvercolor '#FFFFFFFF' --ringwrongcolor '#FF0000FF' --ringcolor '#00000088' --linecolor '#00000088' --keyhlcolor '#FFFFFFFF' --bshlcolor '#FF0000FF' --separatorcolor '#00000000' --verifcolor '#FFFFFFFF' --wrongcolor '#FFFFFFFF' --layoutcolor '#FFFFFFFF' --veriftext "" --wrongtext "" --noinputtext "" --locktext "" -n --pass-media-keys --pass-screen-keys --pass-power-keys
+#--veriftext "" --wrongtext "" --noinputtext "" --locktext "" --layout-font 'Font Awesome 5 Free' --verif-font 'Font Awesome 5 Free' --wrong-font 'Font Awesome 5 Free' --verifsize 100

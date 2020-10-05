@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo  menu
+
+case $BLOCK_BUTTON in
+	1) ~/.scripts/menu_general ;;
+	3) ~/.scripts/menu_programs ;;
+esac &> /dev/null

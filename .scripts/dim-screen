@@ -1,0 +1,8 @@
+#!/bin/bash
+
+trap 'exit 0' TERM INT
+trap "brightnessctl -c 'backlight' -r; kill %%" EXIT
+brightnessctl -c 'backlight' -s
+brightnessctl -c 'backlight' set 5
+sleep 2147483647 &
+wait

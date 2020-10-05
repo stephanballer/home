@@ -1,0 +1,42 @@
+#!/bin/sh
+
+get_connected(){
+	echo -n "$(bluetoothctl info | grep Name | awk '{print $2}' | ~/.scripts/menu_bone 'devices:')"
+}
+
+get_paired(){
+	echo -n "$(bluetoothctl paired-devices | awk '{print $3}' | ~/.scripts/menu_bone 'devices:')"
+}
+
+get_available(){
+	echo -n "$(bluetoothctl devices | awk '{print $3}' | ~/.scripts/menu_bone 'devices:')"
+}
+
+if [[ -n $(bluetooth | grep 'on') ]]; then
+	bluetoothctl power on &> /dev/null
+	action=$(echo -e "connect\ndisconnect\npair\nremove\ntrust\nscan\nlist\ntethering\noff" | ~/.scripts/menu_bone 'action:')
+	case $action in
+		connect) device=$(get_available);
+			[ -n "$device" ] && bluetoothctl connect $(bluetoothctl devices | grep $device | awk '{print $2}');;
+		scan) bluetoothctl --timeout 10 scan on;
+			~/.scripts/menu_bluetooth;;
+		pair) device=$(get_available);
+			[ -n "$device" ] && bluetoothctl pair $(bluetoothctl devices | grep $device | awk '{print $2}');;
+		remove) device=$(get_paired);
+			[ -n "$device" ] && bluetoothctl remove $(bluetoothctl paired-devices | grep $device | awk '{print $2}');;
+		trust) device=$(get_paired);
+			[ -n "$device" ] && bluetoothctl trust $(bluetoothctl paired-devices | grep "$device" | awk '{print $2}');;
+		disconnect) device=$(get_connected)
+			[ -n "$device" ] && bluetoothctl disconnect $(bluetoothctl info | grep -B 2 "$device" | awk 'NR==1{print $2}');;
+		list) get_available && ~/.scripts/menu_bluetooth;;
+		tethering) dbus-send --print-reply --system --type=method_call --dest=org.bluez /org/bluez/hci0/dev_$(bluetoothctl paired-devices | grep $(get_paired) | awk '{print $2}' | sed 's/:/_/g') org.bluez.Network1.Connect string:'nap';
+			~/.scripts/menu_sudo 'dhcpcd -x && dhcpcd bnep0';;
+		off) if [[ "$(echo -e "yes\nno" | ~/.scripts/menu_bone "turn bluetooth off?")" == "yes" ]]; then ~/.scripts/menu_sudo "bluetooth off"; fi
+	esac
+	pkill -RTMIN+10 i3blocks
+else
+	if [[ "$(echo -e "yes\nno" | ~/.scripts/menu_bone "turn bluetooth on?")" == "yes" ]]; then ~/.scripts/menu_sudo "bluetooth on"; fi
+
+fi
+
+pkill --signal=RTMIN+12 i3blocks

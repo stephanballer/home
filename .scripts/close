@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+echo  close
+
+case $BLOCK_BUTTON in
+	1) i3-msg kill;;
+	3) i3-msg focus parent, kill;;
+esac

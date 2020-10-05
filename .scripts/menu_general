@@ -1,0 +1,19 @@
+#!/bin/sh
+
+chosen=$(echo -e "terminal\nprograms\nprimusrun\nsudorun\npower options\nmonitor mode\nbluetooth\nlock\nlog out" | ~/.scripts/menu_bone 'general:')
+
+case "$chosen" in
+	terminal) exec alacritty;;
+#	browser) exec qutebrowser ;;
+#	ranger) exec alacritty -e ranger ;;
+	programs) eval $(~/.scripts/menu_programs);;
+#	screenshot) exec gnome-screenshot -c;;
+	'power options') exec ~/.scripts/menu_power;;
+	'monitor mode') exec ~/.scripts/menu_monitor;;
+	bluetooth) exec ~/.scripts/menu_bluetooth;;
+#	optirun) optirun $(~/.scripts/menu_programs);;
+	primusrun) optirun -b primus $(~/.scripts/menu_programs);;
+	sudorun) ~/.scripts/menu_sudo $(~/.scripts/menu_programs);;
+	lock) exec ~/.scripts/lock;;
+	'log out') exec i3-msg exit;;
+esac

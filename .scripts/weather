@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [[ -z "$FORMAT" ]] ; then FORMAT=1 ; fi
+if [[ -z "$LOCATION" ]] ; then
+	curl wttr.in/?format=$FORMAT
+else
+	curl wttr.in/$LOCATION?format=$FORMAT
+fi
+
+exit $?
+
+#if [[ "1" == "$BLOCK_BUTTON" ]] ; then
+#	exec alacritty --hold -e curl wttr.in/
+#fi

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#text=$(echo -e "$(ls /usr/share/applications)" | while read l; do
+##if [ -n "$(grep "Terminal=false" /usr/share/applications/$l)" -a -z "$(grep "NoDisplay=true" /usr/share/applications/$l)" ]; then
+#if [ -z "$(grep "NoDisplay=true" /usr/share/applications/$l)" ]; then
+#		sed -n 's/Name=//p' /usr/share/applications/$l| head -1|awk '{print tolower($0)}'
+#fi
+#done| sort -u)
+#chosen=$(echo -e "$text"| ~/.scripts/menu_bone 'programs:')
+#
+#if [ -n "$chosen" ]; then
+#	echo "$(sed -n 's/^Exec=//p' $(grep -li "Name=$chosen" /usr/share/applications/*)| head -1 | sed 's/%\w\+//g')"
+#fi
+
+# Alternative:
+#dmenu_run -nf '#EEEEEE' -nb '#000000' -sb '#EEEEEE' -sf '#222222'\
+ #-fn 'Noto Sans Mono-10' -h 24 -b -p 'programs:'
+cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
+if [ -d "$cachedir" ]; then
+	cache=$cachedir/dmenu_run
+else
+	cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
+fi
+(
+	IFS=:
+	if stest -dqr -n "$cache" $PATH; then
+		stest -flx $PATH | sort -u | tee "$cache" | ~/.scripts/menu_bone 'programs:'
+	else
+		~/.scripts/menu_bone 'programs:' < "$cache"
+	fi
+)

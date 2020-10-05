@@ -1,0 +1,10 @@
+#!/bin/sh
+
+chosen=$(echo -e "suspend\nhibernate\nshutdown\nreboot"| ~/.scripts/menu_bone 'power options:')
+
+case "$chosen" in
+	shutdown) ~/.scripts/menu_sudo "shutdown now";;
+	reboot) ~/.scripts/menu_sudo reboot;;
+	hibernate) echo "echo suspend | tee /sys/power/disk && echo mem | tee /sys/power/state" | ~/.scripts/menu_sudo sh; ~/.scripts/lock;;
+	suspend) echo "echo suspend | tee /sys/power/disk && echo disk | tee /sys/power/state" | ~/.scripts/menu_sudo sh; ~/.scripts/lock;;
+esac

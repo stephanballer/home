@@ -1,0 +1,3 @@
+#!/bin/sh
+
+~/.scripts/menu_bone "$1" "-mask" <&-

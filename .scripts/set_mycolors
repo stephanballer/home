@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#COLOR COLOR_LIGHT TEXT TEXT_LIGHT URGENT URGENT_LIGHT BACKGROUND
+# turqoise:
+#~/.scripts/adjust_colors '#222222' '#333333' '#1DDEC5' '#BBBBBB' '#903D3D' '#FFFFFF' '#000000'
+# yellowish:
+#~/.scripts/adjust_colors '#222222' '#333333' '#FFFFBB' '#BBBB99' '#FF2222' '#FFFFBB' '#000000'
+# white:
+#~/.scripts/adjust_colors '#222222' '#333333' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
+# special:
+~/.scripts/adjust_colors '#253d3c' '#2a4d4b' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
+# brown background:
+#~/.scripts/adjust_colors '#222222' '#333333' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#251200'
+# black:
+#~/.scripts/adjust_colors '#FFFFFF' '#DDDDDD' '#222222' '#444444' '#FF2222' '#FFFFBB' '#FFFFFF'
+#~/.scripts/adjust_colors '#152306' '#354E1A' '#CBEFA3' '#8CB164' '#FF2222' '#EEEEEE' '#000000'

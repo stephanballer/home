@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ "$#" -ne 7 ]; then
+	echo "Illegal number of arguments"
+	exit 1
+fi
+
+sed -i "/    background: '/c\    background: '$7'" ~/.config/alacritty/alacritty.yml
+sed -i "/    foreground: '/c\    foreground: '$3'" ~/.config/alacritty/alacritty.yml
+
+sed -i "/set \$COLOR /c\set \$COLOR $1" ~/.config/i3/config
+sed -i "/set \$COLOR_LIGHT /c\set \$COLOR_LIGHT $2" ~/.config/i3/config
+sed -i "/set \$TEXT /c\set \$TEXT $3" ~/.config/i3/config
+sed -i "/set \$TEXT_LIGHT /c\set \$TEXT_LIGHT $4" ~/.config/i3/config
+sed -i "/set \$URGENT_LIGHT /c\set \$URGENT_LIGHT $6" ~/.config/i3/config
+sed -i "/set \$URGENT /c\set \$URGENT $5" ~/.config/i3/config
+sed -i "/set \$BACKGROUND /c\set \$BACKGROUND $7" ~/.config/i3/config
+
+sed -i "/dmenu -nf /c\dmenu -nf '$3' -nb '$7' -sb '$3' -sf '$1' -p \"\$1\"\\\\" ~/.scripts/menu_bone
+#sed -i "/dmenu_run -nf /c\dmenu_run -nf '$3' -nb '$7' -sb '$3' -sf '$1'\\\\" ~/.scripts/menu_programs
+
+sed "s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/qutebrowser/autoconfig.yml.template > ~/.config/qutebrowser/autoconfig.yml
+sed "s/\$BACKGROUND/$7/g; s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/zathura/zathurarc.template > ~/.config/zathura/zathurarc
+
+i3-msg reload
