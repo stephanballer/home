@@ -16,146 +16,146 @@ settings:
         L: forward
         v: null
   colors.completion.category.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.category.border.bottom:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.category.border.top:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.category.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.completion.even.bg:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.completion.fg:
     global:
-    - '#EEEEEE'
-    - '#EEEEEE'
-    - '#EEEEEE'
+    - '#FFFFBB'
+    - '#FFFFBB'
+    - '#FFFFBB'
   colors.completion.item.selected.bg:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.completion.item.selected.border.bottom:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.completion.item.selected.border.top:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.completion.item.selected.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.item.selected.match.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.match.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.completion.odd.bg:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.completion.scrollbar.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.completion.scrollbar.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.downloads.bar.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.downloads.error.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.downloads.error.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.downloads.start.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.downloads.start.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.downloads.stop.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.downloads.stop.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.downloads.system.bg:
     global: rgb
   colors.hints.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.hints.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.hints.match.fg:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.keyhint.bg:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.keyhint.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.keyhint.suffix.fg:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.messages.error.bg:
-    global: '#FF2222'
+    global: '#FF0000'
   colors.messages.error.border:
-    global: '#FF2222'
+    global: '#FF0000'
   colors.messages.error.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.messages.info.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.messages.info.border:
-    global: '#253d3c'
+    global: '#222222'
   colors.messages.info.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.messages.warning.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.messages.warning.border:
-    global: '#253d3c'
+    global: '#222222'
   colors.messages.warning.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.prompts.bg:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.prompts.border:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.prompts.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.prompts.selected.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.caret.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.caret.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.caret.selection.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.caret.selection.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.command.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.command.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.command.private.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.command.private.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.insert.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.insert.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.normal.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.normal.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.passthrough.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.passthrough.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.private.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.statusbar.private.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.progress.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.url.error.fg:
-    global: '#FF2222'
+    global: '#903D3D'
   colors.statusbar.url.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.url.hover.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.url.success.http.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.url.success.https.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.statusbar.url.warn.fg:
-    global: '#FF2222'
+    global: '#FF0000'
   colors.tabs.bar.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.even.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.even.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.tabs.indicator.error:
-    global: '#FF2222'
+    global: '#FF0000'
   colors.tabs.indicator.start:
     global: '#0000FF'
   colors.tabs.indicator.stop:
@@ -163,33 +163,33 @@ settings:
   colors.tabs.indicator.system:
     global: rgb
   colors.tabs.odd.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.odd.fg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.tabs.pinned.even.bg:
-    global: '#2a4d4b'
+    global: '#333333'
   colors.tabs.pinned.even.fg:
-    global: '#253d3c'
+    global: '#FFFF99'
   colors.tabs.pinned.odd.bg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.pinned.odd.fg:
-    global: '#253d3c'
+    global: '#FFFF99'
   colors.tabs.pinned.selected.even.bg:
-    global: '#BBBBBB'
+    global: '#BBBB99'
   colors.tabs.pinned.selected.even.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.pinned.selected.odd.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.tabs.pinned.selected.odd.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.selected.even.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.tabs.selected.even.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.tabs.selected.odd.bg:
-    global: '#EEEEEE'
+    global: '#FFFFBB'
   colors.tabs.selected.odd.fg:
-    global: '#253d3c'
+    global: '#222222'
   colors.webpage.bg:
     global: '#FFFFFF'
   completion.open_categories:
@@ -198,16 +198,8 @@ settings:
     - quickmarks
     - bookmarks
     - history
-  content.xss_auditing:
-    global: false
   downloads.location.directory:
-    global: ~/Clipboard
-  downloads.location.prompt:
-    global: true
-  downloads.location.remember:
-    global: true
-  downloads.location.suggestion:
-    global: path
+    global: ~/Clipboard/
   downloads.open_dispatcher:
     global: null
   editor.command:
@@ -225,22 +217,6 @@ settings:
     global: 10pt Noto Sans
   fonts.debug_console:
     global: 10pt Noto Sans
-  fonts.default_family:
-    global:
-    - xos4 Terminus
-    - Terminus
-    - Monospace
-    - DejaVu Sans Mono
-    - Monaco
-    - Bitstream Vera Sans Mono
-    - Andale Mono
-    - Courier New
-    - Courier
-    - Liberation Mono
-    - Noto Sans
-    - Fixed
-    - Consolas
-    - Terminal
   fonts.downloads:
     global: 10pt Noto Sans
   fonts.hints:
@@ -253,24 +229,24 @@ settings:
     global: 10pt Noto Sans
   fonts.messages.warning:
     global: 10pt Noto Sans
+  fonts.monospace:
+    global: '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream
+      Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", Noto
+      Sans, Fixed, Consolas, Terminal'
   fonts.prompts:
     global: 10pt Noto Sans
   fonts.statusbar:
     global: 10pt Noto Sans
-  fonts.tabs.selected:
-    global: 10pt Noto Sans
-  fonts.tabs.unselected:
+  fonts.tabs:
     global: 10pt Noto Sans
   hints.border:
-    global: '0px solid #EEEEEE'
+    global: '0px solid #FFFFBB'
   prompt.filebrowser:
     global: true
   prompt.radius:
     global: 6
   scrolling.bar:
     global: when-searching
-  scrolling.smooth:
-    global: true
   url.default_page:
     global: https://google.com
   url.searchengines:
