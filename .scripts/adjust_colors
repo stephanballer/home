@@ -16,12 +16,11 @@ sed -i "/set \$URGENT_LIGHT /c\set \$URGENT_LIGHT $6" ~/.config/i3/config
 sed -i "/set \$URGENT /c\set \$URGENT $5" ~/.config/i3/config
 sed -i "/set \$BACKGROUND /c\set \$BACKGROUND $7" ~/.config/i3/config
 
-echo "-nf '$3' -nb '$7' -sb '$3' -sf '$1' -fn 'Noto Sans Mono-10' -h 24 -i -b" > ~/.scripts/menu_args
+echo -e "#!/bin/sh\ndmenu -nf '$3' -nb '$7' -sb '$3' -sf '$1' -fn 'Noto Sans Mono-10' -h 24 -i -b \"\$@\"" > ~/.scripts/menu_bone
 #sed -i "/dmenu_run -nf /c\dmenu_run -nf '$3' -nb '$7' -sb '$3' -sf '$1'\\\\" ~/.scripts/menu_programs
 
-# TODO qutebrowser
-#sed "s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/qutebrowser/autoconfig.yml.template > ~/.config/qutebrowser/autoconfig.yml
-# TODO transparency zatura
-#sed "s/\$BACKGROUND/$7/g; s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/zathura/zathurarc.template > ~/.config/zathura/zathurarc
+sed "s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/qutebrowser/config.py.template > ~/.config/qutebrowser/config.py
+RGB_COLOR=$(printf "rgba(%d,%d,%d,0.75)" ${tmp:1:2} ${tmp:3:2} ${tmp:5:2})
+sed "s/\\\$BACKGROUND/$RGB_COLOR/g; s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/zathura/zathurarc.template > ~/.config/zathura/zathurarc
 
 i3-msg reload

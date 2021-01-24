@@ -29,7 +29,8 @@ if [[ -n $monitor ]]; then
 			for mon in $(xrandr --listactivemonitors); do
 				xrandr --output $mon --off;
 			done
-			xrandr --output $monitor --auto;;
+			xrandr --output $monitor --auto;
+                        ~/.fehbg;;
 		primary)
 			xrandr --output $monitor --primary;;
 
