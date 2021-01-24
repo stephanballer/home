@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu -nf '#EEEEEE' -nb '#000000' -sb '#EEEEEE' -sf '#222222' -fn 'Noto Sans Mono-10' -h 24 -i -b "$@"
+dmenu -nf '#222222' -nb '#FFFFFF' -sb '#222222' -sf '#FFFFFF' -fn 'Noto Sans Mono-10' -h 24 -i -b "$@"

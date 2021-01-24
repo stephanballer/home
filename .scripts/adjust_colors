@@ -20,7 +20,7 @@ echo -e "#!/bin/sh\ndmenu -nf '$3' -nb '$7' -sb '$3' -sf '$1' -fn 'Noto Sans Mon
 #sed -i "/dmenu_run -nf /c\dmenu_run -nf '$3' -nb '$7' -sb '$3' -sf '$1'\\\\" ~/.scripts/menu_programs
 
 sed "s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/qutebrowser/config.py.template > ~/.config/qutebrowser/config.py
-RGB_COLOR=$(printf "rgba(%d,%d,%d,0.75)" ${tmp:1:2} ${tmp:3:2} ${tmp:5:2})
+RGB_COLOR=$(printf "rgba(%d,%d,%d,0.75)" 0x${7:1:2} 0x${7:3:2} 0x${7:5:2})
 sed "s/\\\$BACKGROUND/$RGB_COLOR/g; s/\$COLOR_LIGHT/$2/g; s/\$COLOR/$1/g; s/\$TEXT_LIGHT/$4/g; s/\$TEXT/$3/g; s/\$URGENT/$5/g" ~/.config/zathura/zathurarc.template > ~/.config/zathura/zathurarc
 
 i3-msg reload
