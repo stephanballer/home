@@ -1,6 +1,6 @@
 #!/bin/sh
 
-chosen=$(echo -e "suspend\nhibernate\nshutdown\nreboot"| ~/.scripts/menu_bone 'power options:')
+chosen=$(echo -e "suspend\nhibernate\nshutdown\nreboot"| ~/.scripts/menu_bone -p 'power options:')
 
 case "$chosen" in
 	shutdown) ~/.scripts/menu_sudo "shutdown now";;

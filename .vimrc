@@ -13,6 +13,7 @@ endif
 set undodir=~/.vim/undo-dir
 set undofile
 set spell
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " vmap <C-x> "+d
 " vmap <C-v> "+p
@@ -21,6 +22,7 @@ map <C-j> :winc j<CR>
 map <C-k> :winc k<CR>
 map <C-h> :winc h<CR>
 map <C-l> :winc l<CR>
+map <leader>f :Lf
 
 augroup SpellUnderline
   autocmd!
@@ -60,12 +62,25 @@ augroup SpellUnderline
 
 colorscheme default
 
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_quickfix_blgparser = 'enable'
+let g:Tex_flavor='latex'
+let g:Tex_BibtexFlavor = 'biber'
+let g:Tex_MultipleCompileFormats='pdf,dvi'
+let g:Tex_DefaultTargetFormat="pdf"
+let g:Tex_CompileRule_pdf = 'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode -file-line-error-style $*'
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
+Plug 'ptzz/lf.vim'
 
 call plug#end()
+
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xrandr --delmonitor eDP-1-2
+xrandr --delmonitor eDP-1-1

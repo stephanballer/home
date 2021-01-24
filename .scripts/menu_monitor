@@ -1,25 +1,30 @@
 #!/bin/sh
 
-monitor=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone 'monitor to modify:')
+monitor=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p 'monitor to modify:')
 if [[ -n $monitor ]]; then
-	chosen=$(echo -e "left of...\nright of...\nabove...\nbelow...\nduplicate\nonly\nprimary\noff" | ~/.scripts/menu_bone 'options:')
+	chosen=$(echo -e "left of...\nright of...\nabove...\nbelow...\nduplicate\nonly\nprimary\noff" | ~/.scripts/menu_bone -p 'options:')
 
 	case "$chosen" in
 		"right of...") 
-			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone "$monitor right of:");
-			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --right-of $monitor2;;
+			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p "$monitor right of:");
+			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --right-of $monitor2;
+                        ~/.fehbg;;
 		"left of...")
-			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone "$monitor left of:");
-			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --left-of $monitor2;;
+			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p "$monitor left of:");
+			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --left-of $monitor2;
+                        ~/.fehbg;;
 		"above...")
-			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone "$monitor above:");
-			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --above $monitor2;;
+			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p "$monitor above:");
+			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --above $monitor2;
+                        ~/.fehbg;;
 		"below...")
-			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone "$monitor below:");
-			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --below $monitor2;;
+			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p "$monitor below:");
+			xrandr --output $monitor2 --auto; xrandr --output $monitor --auto --below $monitor2;
+                        ~/.fehbg;;
 		duplicate)
-			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone "$monitor same as:");
-			xrandr --output $monitor --auto; xrandr --output $monitor2 --auto --same-as $monitor;;
+			monitor2=$(xrandr | grep " connected" | awk '{print $1}' | ~/.scripts/menu_bone -p "$monitor same as:");
+			xrandr --output $monitor --auto; xrandr --output $monitor2 --auto --same-as $monitor;
+                        ~/.fehbg;;
 		only)
 			for mon in $(xrandr --listactivemonitors); do
 				xrandr --output $mon --off;

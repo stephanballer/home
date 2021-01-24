@@ -1,9 +1,10 @@
 #!/bin/sh
 
-chosen=$(echo -e "terminal\nprograms\nprimusrun\nsudorun\npower options\nmonitor mode\nbluetooth\nlock\nlog out" | ~/.scripts/menu_bone 'general:')
+chosen=$(echo -e "terminal\npasswords\nprograms\nprimusrun\nsudorun\npower options\nmonitor mode\nbluetooth\nlock\nlog out" | ~/.scripts/menu_bone -p 'general:')
 
 case "$chosen" in
 	terminal) exec alacritty;;
+	passwords) DMENU_PATH=~/.scripts/dmenu bitwarden-dmenu;;
 #	browser) exec qutebrowser ;;
 #	ranger) exec alacritty -e ranger ;;
 	programs) eval $(~/.scripts/menu_programs);;

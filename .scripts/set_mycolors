@@ -6,9 +6,9 @@
 # yellowish:
 #~/.scripts/adjust_colors '#222222' '#333333' '#FFFFBB' '#BBBB99' '#FF2222' '#FFFFBB' '#000000'
 # white:
-#~/.scripts/adjust_colors '#222222' '#333333' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
+~/.scripts/adjust_colors '#222222' '#333333' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
 # special:
-~/.scripts/adjust_colors '#253d3c' '#2a4d4b' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
+#~/.scripts/adjust_colors '#253d3c' '#2a4d4b' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#000000'
 # brown background:
 #~/.scripts/adjust_colors '#222222' '#333333' '#EEEEEE' '#BBBBBB' '#FF2222' '#EEEEEE' '#251200'
 # black:

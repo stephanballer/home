@@ -1,3 +1,3 @@
 #!/bin/sh
 
-~/.scripts/menu_bone "$1" "-mask" <&-
+~/.scripts/menu_bone -p "$1" -mask <&-

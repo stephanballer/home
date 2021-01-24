@@ -13,7 +13,7 @@
 #fi
 
 # Alternative:
-#dmenu_run -nf '#EEEEEE' -nb '#000000' -sb '#EEEEEE' -sf '#222222'\
+#menu_bone_run -nf '#EEEEEE' -nb '#000000' -sb '#EEEEEE' -sf '#222222'\
  #-fn 'Noto Sans Mono-10' -h 24 -b -p 'programs:'
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 if [ -d "$cachedir" ]; then
@@ -24,8 +24,8 @@ fi
 (
 	IFS=:
 	if stest -dqr -n "$cache" $PATH; then
-		stest -flx $PATH | sort -u | tee "$cache" | ~/.scripts/menu_bone 'programs:'
+		stest -flx $PATH | sort -u | tee "$cache" | ~/.scripts/menu_bone -p 'programs:'
 	else
-		~/.scripts/menu_bone 'programs:' < "$cache"
+		~/.scripts/menu_bone -p 'programs:' < "$cache"
 	fi
 )
